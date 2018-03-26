@@ -44,22 +44,27 @@ exponent(4, 4);
 function binarySearch(array, number, start, end){
 
        
-        var midpoint = Math.floor((start + end)/2)
-        
-        if(array[midpoint] == number){
-            return true
-        }else if(array[midpoint] < number) {
-            return binarySearch(array, number, start + 1, end)
-        }else if(array[midpoint] > number) {
-            return binarySearch(array, number, start, end - 1)
-        }else 
-              
-    return false;
+    var midpoint = Math.floor((start + end)/2)
+
+   //basecase 
+   
+    if(start >= end){
+        return false
+    }
+    
+    if(array[midpoint] == number){
+        return true
+    }else if(array[midpoint] < number) {
+        return binarySearch(array, number, start + 1, end)
+    }else if(array[midpoint] > number) {
+        return binarySearch(array, number, start, end - 1)
+    }
+    
 }
 
 let arr = [1, 100, 400, 445, 465, 600, 760, 800, 900];
 
-binarySearch(arr, 100, 0 , arr.length-1);
+binarySearch(arr, 465, 0 , arr.length-1);
 
 //fibonacci
 
